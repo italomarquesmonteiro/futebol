@@ -54,6 +54,14 @@ copa_do_mundo_masculina <- copa_do_mundo_masculina |>
 
 
 ```{r}
+copa_masculina <- copa_do_mundo_masculina |>
+  ggsankey::make_long(
+    continente,
+        pais,
+            titulos,
+                ano) |>
+  dplyr::glimpse()
+
 grafico_copa_homens <-
     ggplot(
         copa_masculina, aes(
@@ -140,6 +148,14 @@ copa_do_mundo_feminina <- copa_do_mundo_feminina    |>
 
 
 ```{r}
+copa_feminina <- copa_do_mundo_feminina |>
+  ggsankey::make_long(
+    continente,
+        pais,
+            titulos,
+                ano) |>
+  dplyr::glimpse()
+
 grafico_copa_mulheres <-
     ggplot(
         copa_feminina,
