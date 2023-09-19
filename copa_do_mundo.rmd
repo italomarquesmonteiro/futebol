@@ -214,5 +214,5 @@ grafico_copa_mulheres <-
                         Fonte: FIFA: https://www.fifa.com/fifaplus/pt/tournaments/womens/womensworldcup/australia-new-zealand2023/articles/todas-as-campeas-copa-mundo-feminina-fifa")
 
 grafico_copa_mulheres
-ggplot2::ggsave("image/grafico_copa_homens.png", plot = grafico_copa_homens, dpi = 300)
+ggplot2::ggsave("image/grafico_copa_mulheres.png", plot = grafico_copa_mulheres, dpi = 300)
 ```
