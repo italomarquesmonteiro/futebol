@@ -54,71 +54,6 @@ copa_do_mundo_masculina <- copa_do_mundo_masculina |>
 
 
 ```{r}
-copa_masculina <- copa_do_mundo_masculina |>
-  ggsankey::make_long(
-    continente,
-        pais,
-            titulos,
-                ano) |>
-  dplyr::glimpse()
-
-imagem_copa_homens <-
-    ggplot(
-        copa_masculina, aes(
-            x = x,
-                next_x = next_x,
-                    node = node,
-                        next_node = next_node,
-                            fill = factor(node),
-                                label = node)
-                                ) +
-    ggsankey::geom_sankey(
-        flow.alpha = 0.5,
-            node.color = "gray70",
-                node.fill = "gray70",
-                    width = 0.1
-    ) +
-  ggsankey::geom_sankey_label(
-    size = 3.5,
-        color = "black",
-            fill = "#ffffff") +
-  ggsankey::theme_sankey(base_size = 16) +
-        theme_void() +
-        theme(
-            legend.position = "none",
-                plot.title = element_text(
-                    face = "italic",
-                        size = 25,
-                            hjust = 0.1),
-            plot.subtitle = element_text(
-                family = "italic",
-                    size = 15,
-                        color = "gray50",
-                            hjust = 0.1),
-            plot.caption = element_text(
-                face = "italic",
-                    size = 12,
-                        color = "gray50"),
-            plot.margin = margin(
-                rep(15, 4)),
-            panel.background = element_rect(
-                fill = "white",
-                    color = "white"),
-            plot.background = element_rect(
-                fill = "white")) +
-        scale_fill_manual(values = c(
-            "Brasil"  = "goldenrod1",
-                "5" = "goldenrod1")
-                ) +
-    labs(
-        title = "Campeões da Copa do Mundo Masculina",
-            subtitle = "1930 - 2022",
-                caption = "by Ítalo Monteiro
-        Fonte: CBF: https://www.cbf.com.br/futebol-brasileiro/noticias/index/as-selecoes-campeas-mundiais-desde-1930")
-imagem_copa_homens
-#ggplot2::ggsave("C:/Users/italo/Downloads/imagem_copa_homens.png", plot = imagem_copa_homens, dpi = 300)
-```
-```{r}
 grafico_copa_homens <-
     ggplot(
         copa_masculina, aes(
@@ -173,8 +108,9 @@ grafico_copa_homens <-
                 caption = "by Ítalo Monteiro
         Fonte: CBF: https://www.cbf.com.br/futebol-brasileiro/noticias/index/as-selecoes-campeas-mundiais-desde-1930")
 grafico_copa_homens
-#ggplot2::ggsave("C:/Users/italo/Downloads/grafico_copa_homens.png", plot = grafico_copa_homens, dpi = 300)
+ggplot2::ggsave("image/grafico_copa_homens.png", plot = grafico_copa_homens, dpi = 300)
 ```
+
 
 Dados da Copa do Mundo Feminina de Futebol
 ```{r}
@@ -202,71 +138,6 @@ copa_do_mundo_feminina <- copa_do_mundo_feminina    |>
     dplyr::glimpse()
 ```
 
-
-```{r}
-copa_feminina <- copa_do_mundo_feminina |>
-  ggsankey::make_long(
-    continente,
-        pais,
-            titulos,
-                ano) |>
-  dplyr::glimpse()
-imagem_copa_mulheres <-
-    ggplot(
-        copa_feminina, aes(
-            x = x,
-                next_x = next_x,
-                    node = node, 
-                        next_node = next_node,
-                            fill = factor(node),
-                                label = node)
-                                ) +
-  ggsankey::geom_sankey(
-    flow.alpha = 0.5,
-        node.color = 1) +
-  ggsankey::geom_sankey_label(
-    size = 3.5,
-        color = "black",
-            fill = "#ffffff",
-                family = "italic") +
-  ggsankey::theme_sankey(
-    base_size = 16) +
-        theme_void() +
-        theme(
-            legend.position = "none",
-            plot.title = element_text(
-                face = "italic",
-                    size = 25,
-                        hjust = 0.1),
-            plot.subtitle = element_text(
-                family = "italic",
-                    size = 15,
-                        color = "gray50",
-                            hjust = 0.1),
-            plot.caption = element_text(
-                face = "italic",
-                    size = 12,
-                        color = "gray50"),
-            plot.margin = margin(
-                rep(15, 4)),
-            panel.background = element_rect(
-                fill = "white",
-                    color = "white"),
-            plot.background = element_rect(
-                fill = "white")) +
-        scale_fill_manual(
-            values = c(
-                "Estados Unidos"  = "goldenrod1",
-                    "4" = "goldenrod1")
-                    ) +
-    labs(
-        title = "Campeãs da Copa do Mundo Feminina",
-            subtitle = "1991 - 2022",
-                caption = "by Ítalo Monteiro
-        Fonte: FIFA: https://www.fifa.com/fifaplus/pt/tournaments/womens/womensworldcup/australia-new-zealand2023/articles/todas-as-campeas-copa-mundo-feminina-fifa")
-imagem_copa_mulheres
-#ggplot2::ggsave("C:/Users/italo/Downloads/imagem_copa_mulheres.png", plot = imagem_copa_mulheres, dpi = 300)
-```
 
 ```{r}
 grafico_copa_mulheres <-
@@ -327,5 +198,5 @@ grafico_copa_mulheres <-
                         Fonte: FIFA: https://www.fifa.com/fifaplus/pt/tournaments/womens/womensworldcup/australia-new-zealand2023/articles/todas-as-campeas-copa-mundo-feminina-fifa")
 
 grafico_copa_mulheres
-#ggplot2::ggsave("C:/Users/italo/Downloads/grafico_copa_homens.png", plot = grafico_copa_homens, dpi = 300)
+ggplot2::ggsave("image/grafico_copa_homens.png", plot = grafico_copa_homens, dpi = 300)
 ```
