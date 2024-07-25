@@ -62,8 +62,7 @@ copa_masculina <- copa_do_mundo_masculina |>
                 ano) |>
   dplyr::glimpse()
 
-grafico_copa_homens <-
-    ggplot(
+grafico_copa_homens <- ggplot(
         copa_masculina, aes(
             x = x,
                 next_x = next_x,
@@ -116,6 +115,9 @@ grafico_copa_homens <-
                 caption = "by Ítalo Monteiro
         Fonte: CBF: https://www.cbf.com.br/futebol-brasileiro/noticias/index/as-selecoes-campeas-mundiais-desde-1930")
 grafico_copa_homens
+```
+
+```{r}
 ggplot2::ggsave("image/grafico_copa_homens.png", plot = grafico_copa_homens, dpi = 300)
 ```
 
@@ -156,8 +158,7 @@ copa_feminina <- copa_do_mundo_feminina |>
                 ano) |>
   dplyr::glimpse()
 
-grafico_copa_mulheres <-
-    ggplot(
+grafico_copa_mulheres <- ggplot(
         copa_feminina,
             aes(
                 x = x,
@@ -214,5 +215,8 @@ grafico_copa_mulheres <-
                         Fonte: FIFA: https://www.fifa.com/fifaplus/pt/tournaments/womens/womensworldcup/australia-new-zealand2023/articles/todas-as-campeas-copa-mundo-feminina-fifa")
 
 grafico_copa_mulheres
+```
+
+```{r}
 ggplot2::ggsave("image/grafico_copa_mulheres.png", plot = grafico_copa_mulheres, dpi = 300)
 ```
